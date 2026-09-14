@@ -1,0 +1,3 @@
+# Stage 6 canonical snapshot
+
+Stage 6 completed a 19-page IJIO-oriented full draft titled **When Supplier Competition Worsens Policy Coordination: Procurement Rents and Regional Industrial-Policy Specialization**. The draft placed the known procurement rent-dissipation result before the new policy-game results, treated the fixed-`N` wedge as non-novel, and centered the manuscript on competition-induced destruction of differentiated Nash equilibria. Stage 6 passed symbolic regression and LaTeX/visual QA. This file records the pre-Stage-8 baseline in repository history; Stage 8 implements the hostile-audit repairs without changing the theory freeze.
