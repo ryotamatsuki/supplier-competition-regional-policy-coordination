@@ -34,13 +34,14 @@ Complete these items from factual author information immediately before submissi
 - [ ] Verify the named tool/service and stated uses still exactly describe actual use at the date of submission
 
 ## Portal status — live recheck required
-Evidence checked 2026-09-15:
+Evidence checked in Stage 10:
 - The official Elsevier IJIO journal page links to `https://www.editorialmanager.com/ijio/default.aspx`.
-- The public Editorial Manager landing page currently displays: `Site under development. Do not use for live manuscript submission.`
+- The latest public Editorial Manager snapshot accessible to this audit displayed: `Site under development. Do not use for live manuscript submission.`
+- That accessible snapshot was crawled roughly two months earlier, so it is not proof of the live portal status on 2026-09-15.
 
 Therefore:
-- [ ] Recheck the official IJIO submission link before entering metadata.
-- [ ] Do not use the portal while the development notice remains.
+- [ ] Recheck the official IJIO submission link in a live browser immediately before entering metadata.
+- [ ] If a development / do-not-submit notice is present, stop and do not use that portal.
 
 ## Fees — live recheck required
 Prior evidence:
@@ -53,7 +54,7 @@ Required at live submission:
 
 ## Final administrative stop rules
 Do not click final submission if:
-1. the portal still says it is under development / not for live submission;
+1. the live portal is not verified or says it is under development / not for live submission;
 2. any factual author field is unresolved;
 3. any title-page or cover-letter placeholder remains;
 4. the portal-generated PDF is incorrect;
