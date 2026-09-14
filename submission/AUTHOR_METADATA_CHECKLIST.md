@@ -6,6 +6,7 @@ Complete these items from factual author information immediately before submissi
 - [ ] Full author name(s)
 - [ ] Current affiliation(s)
 - [ ] Corresponding-author email
+- [ ] Full postal address
 - [ ] ORCID, if used
 - [ ] Author-order and authorship approval
 
@@ -18,26 +19,45 @@ Complete these items from factual author information immediately before submissi
 - [ ] Disclose the related companion manuscript and use `submission/COVER_LETTER_IJIO.md`
 
 ## Manuscript files
-- [ ] Anonymous manuscript PDF / source as required by the live portal
-- [ ] Separate title page if double-anonymous workflow requires it
-- [ ] Cover letter
-- [ ] Highlights only if the live portal requires or invites them
-- [ ] Reproducibility files if accepted by the portal, otherwise retain repository link/materials for editor/referee request
+- [x] Anonymous canonical manuscript prepared
+- [x] Separate title-page template prepared
+- [x] Cover-letter template prepared
+- [x] Five highlights prepared; each bullet <=85 characters
+- [x] Reproducibility scripts retained
+- [ ] Replace all title-page / cover-letter placeholders with author-confirmed facts
+- [ ] Upload highlights only if the live portal requests or permits them
+- [ ] Map anonymous manuscript and title page to the exact live file categories
 
 ## AI transparency
-- [ ] Keep the manuscript’s separate generative-AI declaration immediately before references
-- [ ] Keep the research-process disclosure for AI-assisted verification code
+- [x] Separate generative-AI declaration retained immediately before references
+- [x] Research-process disclosure for AI-assisted verification code retained
 - [ ] Verify the named tool/service and stated uses still exactly describe actual use at the date of submission
 
+## Portal status — live recheck required
+Evidence checked in Stage 10:
+- The official Elsevier IJIO journal page links to `https://www.editorialmanager.com/ijio/default.aspx`.
+- The latest public Editorial Manager snapshot accessible to this audit displayed: `Site under development. Do not use for live manuscript submission.`
+- That accessible snapshot was crawled roughly two months earlier, so it is not proof of the live portal status on 2026-09-15.
+
+Therefore:
+- [ ] Recheck the official IJIO submission link in a live browser immediately before entering metadata.
+- [ ] If a development / do-not-submit notice is present, stop and do not use that portal.
+
 ## Fees — live recheck required
-Evidence checked 2026-09-15:
-- Elsevier’s current policy states that authors in hybrid journals can publish under the subscription model at no publication cost.
-- A March 2026 economics-journal fee compendium, which states that it verified current fees from official journal websites, lists the *International Journal of Industrial Organization* submission fee as **Free**.
-- The accessible public IJIO journal page did not itself expose an explicit submission-fee sentence during Stage 9.
+Prior evidence:
+- Elsevier’s standard subscription route for hybrid journals does not require an OA publication charge.
+- Prior Stage 9 evidence classified the IJIO submission fee as **LIKELY FREE**, but the accessible official IJIO page did not expose an explicit fee sentence.
 
-Therefore the working classification is:
+Required at live submission:
+- [ ] Confirm the submission-fee screen shows no unexpected mandatory charge.
+- [ ] Confirm the standard subscription publication route has no mandatory publication charge.
 
-`IJIO: subscription publication fee = 0 (official Elsevier); submission fee = LIKELY FREE, verify on the live Editorial Manager payment screen before final submission.`
+## Final administrative stop rules
+Do not click final submission if:
+1. the live portal is not verified or says it is under development / not for live submission;
+2. any factual author field is unresolved;
+3. any title-page or cover-letter placeholder remains;
+4. the portal-generated PDF is incorrect;
+5. an unexpected mandatory submission or standard-publication charge appears.
 
-## Final administrative stop rule
-Do not click final submission if the live portal reveals an unexpected mandatory submission or standard-publication charge. Record it and reassess the zero-cost journal ladder first.
+Record any such blocker and reassess before submission.
