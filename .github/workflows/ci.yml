@@ -20,6 +20,8 @@ jobs:
         run: python verification/stage9_verify.py
       - name: Run Stage 10 submission preflight
         run: python verification/stage10_preflight.py
+      - name: Run workflow-v2.1 independent certification regression
+        run: python verification/v21_certification.py
       - name: Regenerate regime figure
         run: python verification/make_uniform_regime_figure.py
       - name: Install LaTeX
@@ -61,4 +63,71 @@ jobs:
         with:
           name: IJIO-preflight-packet
           path: dist/
+          retention-days: 30
+
+  lean-verification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify pinned formal environment
+        run: |
+          test "$(cat formal/lean-toolchain)" = "leanprover/lean4:v4.32.1"
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          manifest = json.loads(Path('formal/lake-manifest.json').read_text())
+          packages = {p['name']: p for p in manifest['packages']}
+          assert packages['mathlib']['rev'] == '520045ab14e26149ee970e2e617ca04b09bde5d6'
+          assert packages['mathlib']['inputRev'] == 'v4.32.1'
+          assert all(p.get('rev') for p in manifest['packages'])
+          print('Pinned Lean/mathlib manifest verified.')
+          PY
+      - name: Reject proof placeholders and project axioms
+        run: |
+          if grep -R -n -E '(^|[^A-Za-z])(sorry|admit)([^A-Za-z]|$)' formal --include='*.lean'; then
+            echo 'Formal source contains a forbidden proof placeholder.'
+            exit 1
+          fi
+          if grep -R -n -E '^[[:space:]]*axiom[[:space:]]' formal/SupplierCompetitionPolicy formal/SupplierCompetitionPolicy.lean --include='*.lean'; then
+            echo 'Formal source contains a project-specific axiom declaration.'
+            exit 1
+          fi
+      - name: Install pinned Lean toolchain
+        run: |
+          curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Restore mathlib cache
+        run: |
+          cd formal
+          lake exe cache get
+      - name: Build proof-critical Lean core
+        run: |
+          cd formal
+          lake build
+      - name: Record theorem/axiom report
+        run: |
+          cd formal
+          lake env lean SupplierCompetitionPolicy/Audit.lean | tee FORMAL_AXIOM_REPORT.txt
+          if grep -q 'sorryAx' FORMAL_AXIOM_REPORT.txt; then
+            echo 'Axiom audit detected sorryAx.'
+            exit 1
+          fi
+      - name: Record formal verification provenance
+        run: |
+          {
+            echo "commit=${GITHUB_SHA}"
+            echo "certified_theory=P2-IO-THEORY-FREEZE-2026-09-15-v1"
+            echo "lean=leanprover/lean4:v4.32.1"
+            echo "mathlib=520045ab14e26149ee970e2e617ca04b09bde5d6"
+            echo "workflow_run_id=${GITHUB_RUN_ID}"
+          } | tee formal/FORMAL_VERIFICATION_RUN.txt
+      - name: Upload formal verification evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: formal-verification-evidence
+          path: |
+            formal/FORMAL_AXIOM_REPORT.txt
+            formal/FORMAL_VERIFICATION_RUN.txt
+            formal/AXIOM_AUDIT.md
           retention-days: 30
