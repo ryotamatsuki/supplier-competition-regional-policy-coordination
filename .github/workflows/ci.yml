@@ -18,13 +18,15 @@ jobs:
         run: python verification/stage8_verify.py
       - name: Run Stage 9 independent final referee regression
         run: python verification/stage9_verify.py
+      - name: Run Stage 10 submission preflight
+        run: python verification/stage10_preflight.py
       - name: Regenerate regime figure
         run: python verification/make_uniform_regime_figure.py
       - name: Install LaTeX
         run: |
           sudo apt-get update
-          sudo apt-get install -y texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended
-      - name: Compile manuscript
+          sudo apt-get install -y texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended zip
+      - name: Compile anonymous manuscript
         working-directory: paper
         run: |
           pdflatex -interaction=nonstopmode -halt-on-error main.tex
@@ -34,3 +36,24 @@ jobs:
         working-directory: paper
         run: |
           ! grep -E 'undefined references|Reference .* undefined|Citation .* undefined|Overfull \\hbox|Underfull \\hbox' main.log
+      - name: Compile administrative templates
+        working-directory: submission
+        run: |
+          pdflatex -interaction=nonstopmode -halt-on-error title_page.tex
+          pdflatex -interaction=nonstopmode -halt-on-error cover_letter.tex
+      - name: Build preflight source archive
+        run: |
+          mkdir -p dist
+          zip -r dist/IJIO-anonymous-source.zip paper figures verification submission -x '*.aux' '*.log' '*.out' '*.pdf' '*.png'
+          cp paper/main.pdf dist/anonymous-manuscript.pdf
+          cp submission/title_page.pdf dist/title-page-TEMPLATE.pdf
+          cp submission/cover_letter.pdf dist/cover-letter-TEMPLATE.pdf
+          cp submission/HIGHLIGHTS.txt dist/HIGHLIGHTS.txt
+          cp submission/EDITORIAL_MANAGER_METADATA.md dist/EDITORIAL_MANAGER_METADATA.md
+          cp submission/SUBMISSION_PACKET.md dist/SUBMISSION_PACKET.md
+      - name: Upload IJIO preflight packet
+        uses: actions/upload-artifact@v4
+        with:
+          name: IJIO-preflight-packet
+          path: dist/
+          retention-days: 30
