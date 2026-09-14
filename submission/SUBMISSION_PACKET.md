@@ -13,12 +13,12 @@
 4. `submission/HIGHLIGHTS.txt` -> 5 bullets; each is <=85 characters; upload only if requested/permitted by the live journal workflow.
 5. `submission/AUTHOR_METADATA_CHECKLIST.md` -> final human checklist.
 
-## Current portal status checked 2026-09-15
-The official IJIO page links to `https://www.editorialmanager.com/ijio/default.aspx`. The publicly accessible landing page currently displays:
+## Portal-status evidence checked in Stage 10
+The official IJIO page links to `https://www.editorialmanager.com/ijio/default.aspx`. The latest public snapshot accessible to this audit displayed:
 
 > Site under development. Do not use for live manuscript submission.
 
-Therefore the packet can be prepared and validated, but the live fee screen and final submission cannot be completed at this Stage 10 run. Recheck the official IJIO link immediately before submission.
+That snapshot was crawled roughly two months earlier, so it is not treated as proof of the portal's live status on 2026-09-15. The correct Stage 10 conclusion is that the live portal and fee screen remain unverified and must be rechecked immediately before submission.
 
 ## Anonymization
 The canonical manuscript uses `\author{Anonymous manuscript}` and does not contain the author's identity or affiliation. The related companion manuscript is cited as `Anonymous (2026)`. Author-identifying factual information is isolated in the separate title-page / metadata files.
