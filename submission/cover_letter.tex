@@ -1,7 +1,15 @@
 \documentclass[11pt]{letter}
 \usepackage[margin=1in]{geometry}
-\signature{[FULL AUTHOR NAME]\\[AFFILIATION]\\[EMAIL]}
-\address{[FULL AUTHOR NAME]\\[AFFILIATION]\\[POSTAL ADDRESS]\\[EMAIL]}
+
+% Replace these macros with author-confirmed facts before submission.
+\newcommand{\AuthorName}{FULL AUTHOR NAME}
+\newcommand{\AuthorAffiliation}{FULL AFFILIATION}
+\newcommand{\AuthorEmail}{EMAIL ADDRESS}
+\newcommand{\AuthorPostalAddress}{POSTAL ADDRESS}
+
+\signature{\AuthorName\\\AuthorAffiliation\\\AuthorEmail}
+\address{\AuthorName\\\AuthorAffiliation\\\AuthorPostalAddress\\\AuthorEmail}
+
 \begin{document}
 \begin{letter}{Editors\\International Journal of Industrial Organization}
 \opening{Dear Editors,}
@@ -16,7 +24,7 @@ A related companion manuscript, ``Industrial Policy Composition and Regional Val
 
 The manuscript is theoretical and uses no empirical data. Reproducibility materials contain Python/SymPy algebraic regression checks and figure-generation code. The manuscript contains a declaration of generative-AI and AI-assisted technologies and separately describes AI-assisted verification code.
 
-[INSERT AUTHOR-CONFIRMED EXCLUSIVITY / PREPRINT / FUNDING / COMPETING-INTEREST INFORMATION IF THE LIVE PORTAL OR EDITOR REQUIRES IT HERE.]
+\textbf{Administrative completion before submission:} Insert the author-confirmed statements on exclusivity, preprint status, funding, and competing interests here if the live portal or editor requires them in the cover letter.
 
 Thank you for your consideration.
 
