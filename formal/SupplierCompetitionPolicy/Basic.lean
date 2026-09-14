@@ -2,6 +2,8 @@ import Mathlib
 
 namespace SupplierCompetitionPolicy
 
+noncomputable section
+
 inductive Action where
   | U
   | D
@@ -54,5 +56,7 @@ def IsMixedNash (Delta A rho B R p1 p2 : ℝ) : Prop :=
 
 def mixedProbability (Delta A rho B R : ℝ) : ℝ :=
   (Delta + A * B) / (A * (B + rho * R))
+
+end
 
 end SupplierCompetitionPolicy
