@@ -24,12 +24,12 @@ This outcome is administrative, not scientific.
 - CI creates an `IJIO-preflight-packet` artifact containing the manuscript PDF, administrative templates, highlights, metadata sheet and editable source archive.
 - Theory drift: none.
 
-## Blocking item 1 — official submission portal
-The official Elsevier IJIO page currently links to `https://www.editorialmanager.com/ijio/default.aspx`, whose public landing page states:
+## Blocking item 1 — live submission portal / fee screen not verified
+The official Elsevier IJIO page links to `https://www.editorialmanager.com/ijio/default.aspx`. The latest public snapshot available to this audit displayed:
 
 `Site under development. Do not use for live manuscript submission.`
 
-Therefore the live journal workflow and payment screen cannot be treated as available for final submission in this Stage 10 run.
+That accessible snapshot was crawled roughly two months earlier, so Stage 10 does not assert that the notice necessarily remains live on 2026-09-15. The correct conclusion is that the **current live portal status and current fee screen are not verified**. The Stage 10 contract requires those checks immediately before submission, so the portal/fee gate remains open.
 
 ## Blocking item 2 — factual author inputs
 The following must be supplied from author-confirmed facts and are intentionally not inferred:
@@ -46,10 +46,10 @@ The following must be supplied from author-confirmed facts and are intentionally
 The package isolates these fields so they can be inserted without touching the anonymous manuscript or theory.
 
 ## Fee status
-The live fee screen could not be checked because of the current portal status. Prior evidence supports a zero-cost standard subscription route and likely zero submission fee, but the Stage 10 contract requires a live confirmation immediately before submission. That gate remains open.
+The live fee screen could not be checked. Prior evidence supports a zero-cost standard subscription route and likely zero submission fee, but the Stage 10 contract requires a live confirmation immediately before submission. That gate remains open.
 
 ## Scientific status
 `SUBMISSION AUTHORIZED — IJIO` remains unchanged. No Stage 10 finding reopens theory or manuscript science.
 
 ## Next action
-When the official IJIO submission workflow is live, complete the factual metadata, replace all title-page / cover-letter placeholders, verify the fee screen, rerun the final package CI, and proceed to Stage 11 submission execution only on explicit user instruction.
+At Stage 11, first verify the live official IJIO submission workflow and fee screen, then complete factual metadata, replace all title-page / cover-letter placeholders, rerun final package CI, and proceed through the live submission workflow only on explicit user instruction.
