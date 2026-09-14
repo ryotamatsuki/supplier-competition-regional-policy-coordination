@@ -1,0 +1,122 @@
+\section{Supplier Competition and Policy Regimes}
+\label{sec:main-results}
+
+We now vary the exogenous number of suppliers. The first comparative static is elementary: adding an independent supplier lowers the expected minimum cost strictly, so
+\begin{equation}
+m_{N+1}<m_N
+\quad\Longrightarrow\quad
+G_{N+1}>G_N.
+\label{eq:G-increase}
+\end{equation}
+The second comparative static comes from procurement theory. Under DRHR, expected winning supplier rent is strictly decreasing and converges to zero \citep{Li2005,XuLi2019}:
+\begin{equation}
+R_{N+1}<R_N,
+\qquad
+\lim_{N\to\infty}R_N=0.
+\label{eq:R-decrease}
+\end{equation}
+The economic contribution comes from combining these known lower-stage effects with the government game.
+
+\subsection{Competition--coordination divergence}
+
+\begin{theorem}[Competition--coordination divergence]
+\label{thm:divergence}
+Under the baseline assumptions,
+\begin{equation}
+A_{N+1}^P<A_N^P
+\qquad\text{and}\qquad
+A_{N+1}^N>A_N^N.
+\label{eq:opposite-thresholds}
+\end{equation}
+Thus stronger supplier competition moves the coordinated and decentralized differentiation thresholds in opposite directions.
+\end{theorem}
+
+The first inequality follows because competition raises expected real project surplus. The second follows because competition dissipates the locally captured supplier rent that rewards a region for accepting $D$. The same change in market structure therefore makes differentiation more attractive to a coordinator and less attractive to the decentralized region that must specialize on the supplier side.
+
+Define the inefficient-duplication interval
+\begin{equation}
+\mathcal W_N\equiv(A_N^P,A_N^N).
+\label{eq:wedgeN}
+\end{equation}
+For every $A\in\mathcal W_N$, Proposition \ref{prop:nash} implies that $(U,U)$ is the unique Nash equilibrium while Proposition \ref{prop:planner} implies that the coordinator strictly chooses a differentiated profile.
+
+\begin{corollary}[Strict expansion of unique inefficient duplication]
+\label{cor:wedge-expansion}
+Under the baseline assumptions,
+\begin{equation}
+\mathcal W_N\subsetneq \mathcal W_{N+1}.
+\label{eq:wedge-nesting}
+\end{equation}
+\end{corollary}
+
+This result differs from a conventional statement that competition improves or worsens welfare. Conditional on differentiation, procurement becomes more efficient as $N$ rises. What expands is the set of environments in which decentralized governments fail to select the differentiated configuration in the first place.
+
+\subsection{Competition-induced policy reversal}
+
+The threshold result has a sharper equilibrium implication. Let $c_0$ be the lower endpoint of supplier costs. Under the maintained compact support and positive density, the minimum order statistic converges to $c_0$, and hence
+\begin{equation}
+\lim_{N\to\infty}G_N=v-c_0.
+\label{eq:Glimit}
+\end{equation}
+At the same time, DRHR implies $R_N\to0$.
+
+\begin{theorem}[Competition-induced policy reversal]
+\label{thm:reversal}
+Suppose
+\begin{equation}
+A(v-c_0)>\Delta.
+\label{eq:reversal-condition}
+\end{equation}
+Then there exists a finite $\bar N$ such that for all $N\ge\bar N$,
+\begin{equation}
+\operatorname{argmax}V=\{(U,D),(D,U)\},
+\qquad
+NE_N=\{(U,U)\}.
+\label{eq:reversal-result}
+\end{equation}
+\end{theorem}
+
+Theorem \ref{thm:reversal} is the main result. If the asymptotic real surplus from a differentiated project is large enough to cover the sacrificed direct premium, a coordinator eventually prefers differentiation. Yet competition drives locally captured supplier rent toward zero, so the $D$ role eventually becomes privately unattractive to either regional government. The market can therefore approach productive efficiency within the procurement subgame while decentralized policy converges toward the wrong policy configuration.
+
+A useful corollary starts from a market in which differentiated Nash equilibria already exist.
+
+\begin{corollary}[Destruction of differentiated Nash equilibria]
+\label{cor:destruction}
+Suppose that for some $N_0$,
+\begin{equation}
+A\rho R_{N_0}>\Delta
+\label{eq:initial-diff}
+\end{equation}
+so that $(U,D)$ and $(D,U)$ are pure Nash equilibria. Then there exists a finite $N_1>N_0$ such that for all sufficiently large $N\ge N_1$, those differentiated equilibria no longer exist and $(U,U)$ is the unique Nash equilibrium. If the coordinator differentiates at $N_0$, it continues to differentiate for every $N>N_0$.
+\end{corollary}
+
+This corollary gives the result an equilibrium-set interpretation. Supplier competition need not merely widen an inefficiency wedge around a fixed equilibrium. It can change the qualitative regime from one with efficient differentiated equilibria to one with unique duplicated priorities.
+
+\subsection{Uniform illustration}
+
+For intuition, let $F$ be uniform on $[0,1]$ and set $\rho=1$. Then
+\begin{equation}
+m_N=\frac{1}{N+1},
+\qquad
+R_N=\frac{1}{N+1},
+\qquad
+B_N=v-\frac{2}{N+1}.
+\label{eq:uniform-objects}
+\end{equation}
+The thresholds are
+\begin{equation}
+A_N^P=\frac{\Delta(N+1)}{v(N+1)-1},
+\qquad
+A_N^N=\Delta(N+1).
+\label{eq:uniform-thresholds}
+\end{equation}
+Thus the decentralized threshold grows linearly with supplier count, whereas the coordinated threshold falls toward $\Delta/v$. Figure \ref{fig:uniform-regimes} illustrates the opposite movements for $\Delta=1$ and $v=2$. The horizontal line $A=5$ shows the equilibrium-set transition directly: differentiated pure equilibria exist at low $N$, the decentralized threshold is reached at $N=4$, and for $N\ge5$ the unique Nash equilibrium is duplication, while coordinated differentiation remains optimal throughout.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.82\textwidth]{../figures/uniform_regime_thresholds.pdf}
+\caption{Competition moves the coordinated and decentralized differentiation thresholds in opposite directions. Uniform costs on $[0,1]$, $\rho=1$, $\Delta=1$, and $v=2$. The fixed line $A=5$ illustrates the destruction of differentiated Nash equilibria as $N$ rises.}
+\label{fig:uniform-regimes}
+\end{figure}
+
+The uniform case is only an illustration; Theorems \ref{thm:divergence} and \ref{thm:reversal} use the general DRHR class.

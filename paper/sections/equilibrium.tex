@@ -1,0 +1,37 @@
+\section{Decentralized Regional-Policy Equilibrium}
+\label{sec:equilibrium}
+
+Against an opponent choosing $U$, a government obtains $\Delta$ from choosing $U$ and $A\rho R_N$ from choosing $D$. Define the decentralized differentiation threshold
+\begin{equation}
+A_N^N\equiv \frac{\Delta}{\rho R_N}.
+\label{eq:AN-main}
+\end{equation}
+The threshold is finite because $R_N>0$ for a nondegenerate continuous cost distribution and finite $N$.
+
+\begin{proposition}[Exact decentralized equilibrium set]
+\label{prop:nash}
+Fix $N\ge2$.
+\begin{enumerate}[label=(\roman*)]
+\item If $A<A_N^N$, $U$ is a strictly dominant action and the unique Nash equilibrium is $(U,U)$.
+\item If $A=A_N^N$, let $p_i$ denote the probability that region $i$ chooses $U$. The full mixed-strategy Nash set is
+\begin{equation}
+\left\{(p_1,p_2)\in[0,1]^2:\ p_1=1\ \text{or}\ p_2=1\right\}.
+\label{eq:boundary-nash}
+\end{equation}
+Its pure-strategy members are $(U,U)$, $(U,D)$, and $(D,U)$.
+\item If $A>A_N^N$, the differentiated profiles $(U,D)$ and $(D,U)$ are pure Nash equilibria. In addition, there is a unique completely mixed equilibrium, which is symmetric and in which each government chooses $U$ with probability
+\begin{equation}
+p_N^*=\frac{\Delta+A B_N}{A(B_N+\rho R_N)}\in(0,1).
+\label{eq:mixed}
+\end{equation}
+\end{enumerate}
+\end{proposition}
+
+The game is therefore a dominance game below the threshold and an anti-coordination game above it. At the boundary, the equilibrium correspondence contains the three pure equilibria and semi-mixed profiles in which at least one region chooses $U$ with probability one. The role of procurement is not to create an additional strategic action for the governments; it determines the continuation value $\rho R_N$ associated with accepting the $D$ role.
+
+The mixed equilibrium provides another way to see the effect of local incidence. A larger $\rho R_N$ makes $D$ more attractive against $U$, lowering the probability with which each government chooses $U$ in the symmetric mixed equilibrium. Conversely, supplier-rent compression pushes the mixed equilibrium toward duplication. We do not use this observation as the main comparative static because the strongest result below concerns the disappearance of the differentiated pure equilibria themselves.
+
+\begin{remark}[Fixed-$N$ interpretation]
+\label{rem:fixedN}
+For a fixed supplier market, the unilateral move from $(U,U)$ to $(U,D)$ is profitable for the $D$ government iff $A\rho R_N>\Delta$. This is a standard incomplete-capture switching inequality. The novel results of the paper concern how the entire equilibrium set changes when the supplier-market primitive $N$ changes.
+\end{remark}

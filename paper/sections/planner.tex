@@ -1,0 +1,33 @@
+\section{Coordinated Fixed-Instrument Benchmark}
+\label{sec:planner}
+
+We compare decentralized policy with a coordinator who chooses the two regional roles while holding fixed the policy instrument set, supplier market, procurement technology, information structure, project value, and project scale. This is a coordinated fixed-instrument benchmark, not an unrestricted first best.
+
+Procurement payments are transfers within the modeled economy. The real surplus of a differentiated project is therefore $v-C_{1:N}$, with expectation $G_N$. The aggregate modeled values of the four policy profiles are
+\begin{align}
+V(U,U)&=2\Delta,\label{eq:planner-UU}\\
+V(U,D)=V(D,U)&=\Delta+A G_N,\label{eq:planner-UD}\\
+V(D,D)&=0.\label{eq:planner-DD}
+\end{align}
+Define the coordinated differentiation threshold
+\begin{equation}
+A_N^P\equiv \frac{\Delta}{G_N}.
+\label{eq:AP-main}
+\end{equation}
+
+\begin{proposition}[Exact coordinated allocation]
+\label{prop:planner}
+Fix $N\ge2$.
+\begin{enumerate}[label=(\roman*)]
+\item If $A<A_N^P$, $(U,U)$ is the unique coordinated optimum.
+\item If $A=A_N^P$, $(U,U)$, $(U,D)$, and $(D,U)$ are coordinated optima.
+\item If $A>A_N^P$, the exact coordinated optima are $(U,D)$ and $(D,U)$.
+\end{enumerate}
+\end{proposition}
+
+Because $G_N=B_N+R_N$ and $B_N>0$, while $\rho\le1$, we have
+\begin{equation}
+G_N>\rho R_N.
+\label{eq:capture-gap}
+\end{equation}
+Hence $A_N^P<A_N^N$ for every fixed $N$. This fixed-$N$ threshold ordering is not the headline result. The central question is how the two thresholds respond to supplier competition.

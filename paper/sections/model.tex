@@ -1,0 +1,88 @@
+\section{Model and Procurement Continuation}
+\label{sec:model}
+
+\subsection{Regional policy choices}
+
+There are two symmetric regions, indexed by $i\in\{1,2\}$. Each regional government chooses one of two industrial-policy roles,
+\begin{equation}
+s_i\in\{U,D\}.
+\end{equation}
+Activity $U$ is the locally attractive lead/buyer-side activity and yields direct real surplus $\Delta>0$ to the region choosing it. Activity $D$ is the complementary supplier-side activity: the region choosing it hosts or develops the supplier base used by the lead side. The direct local return to $D$ apart from procurement-side surplus is normalized to zero. The normalization only fixes the opportunity cost of taking the complementary role: a government that switches from $U$ to $D$ gives up $\Delta$.
+
+The policy roles are technologically complementary across regions. A procurement continuation is activated only when the policy profile is differentiated, $(U,D)$ or $(D,U)$. If both governments choose $U$, each obtains its direct return $\Delta$ and no complementary project occurs. If both choose $D$, neither obtains the direct $U$ return and no complementary project occurs.
+
+A parameter $A>0$ scales the mass or economic importance of the complementary relationship. It can be interpreted as the scale, mass, or economic importance of otherwise identical complementary procurement opportunities. It is a continuous intensity parameter, not literally a count of projects. It does not change the supplier cost distribution.
+
+\subsection{Supplier market}
+
+Conditional on a differentiated policy profile, the $U$ region is the lead/buyer side of the project and procures from a supplier base hosted or developed by the $D$ region. The $D$ region has $N\ge2$ potential suppliers. Supplier $k$ has private production cost
+\begin{equation}
+C_k\overset{iid}{\sim}F
+\end{equation}
+on compact support $[c_0,\bar c]$, with continuous strictly positive density $f$. Costs are independent private information and suppliers are risk neutral. The project creates gross value $v$ and the baseline assumes
+\begin{equation}
+v>\bar c,
+\label{eq:guaranteed-trade}
+\end{equation}
+so trade always occurs once a differentiated policy profile is selected.
+
+For transparency, the canonical implementation is a second-price reverse auction. The lowest-cost supplier wins and is paid the second-lowest cost. Let $C_{1:N}$ and $C_{2:N}$ denote the first and second order statistics. Truthful cost revelation is a dominant strategy, and the realized decomposition is
+\begin{align}
+\text{real match surplus} &= v-C_{1:N},\\
+\text{buyer surplus} &= v-C_{2:N},\\
+\text{winning supplier rent} &= C_{2:N}-C_{1:N}.
+\end{align}
+Define the expected objects
+\begin{align}
+m_N &\equiv \E[C_{1:N}],\label{eq:mN}\\
+s_N &\equiv \E[C_{2:N}],\label{eq:sN}\\
+R_N &\equiv s_N-m_N=\E[C_{2:N}-C_{1:N}],\label{eq:RN}\\
+B_N &\equiv v-s_N,\label{eq:BN}\\
+G_N &\equiv v-m_N=B_N+R_N.\label{eq:GN}
+\end{align}
+Here $G_N$ is expected real surplus of the active complementary relation, $R_N$ is expected winning supplier information rent, and $B_N$ is expected buyer surplus.
+
+The baseline distribution satisfies decreasing reversed hazard rate (DRHR):
+\begin{equation}
+\frac{f(c)}{F(c)}\quad\text{is decreasing in }c.
+\label{eq:drhr}
+\end{equation}
+This is a standard regularity condition in procurement models. We use it only for the comparative static of supplier rent. In particular, procurement theory establishes that, under DRHR, expected winning rent $R_N$ is strictly decreasing in $N$ and converges to zero \citep{Li2005,XuLi2019}. That result is imported rather than derived as a contribution of this paper.
+
+\subsection{Regional incidence}
+
+The $U$ region internalizes the buyer-side surplus $B_N$. The $D$ regional government internalizes a fraction
+\begin{equation}
+\rho\in(0,1]
+\end{equation}
+of winning supplier rent. Thus its expected local benefit from the procurement continuation is $\rho R_N$. The parameter $\rho$ is an incidence mapping: it is the share or weight of supplier surplus internalized by the $D$ regional government. The remaining $(1-\rho)R_N$ is outside that regional government's objective but, in the baseline, remains within the constituency of the coordinated benchmark. It is therefore not destroyed and is not interpreted mechanically as foreign ownership.
+
+The coordinated benchmark introduced below values the full real surplus $G_N$. Thus $\rho<1$ represents incomplete regional-government internalization within the modeled supralocal constituency, not a social waste term.
+
+\subsection{Timing and induced payoff matrix}
+
+The timing is:
+\begin{enumerate}[label=(\arabic*)]
+\item $N,F,\Delta,A,v,$ and $\rho$ are common knowledge.
+\item Regional governments simultaneously choose $U$ or $D$.
+\item If the profile is differentiated, supplier costs are realized privately and the procurement auction is played.
+\item Production and payoffs are realized.
+\end{enumerate}
+
+Solving the procurement continuation yields the expected first-stage payoff matrix in Table \ref{tab:payoffs}.
+
+\begin{table}[ht]
+\centering
+\caption{Expected regional payoffs}
+\label{tab:payoffs}
+\begin{tabular}{c c c}
+\toprule
+& Region 2: $U$ & Region 2: $D$\\
+\midrule
+Region 1: $U$ & $(\Delta,\Delta)$ & $(\Delta+A B_N,\; A\rho R_N)$\\
+Region 1: $D$ & $(A\rho R_N,\; \Delta+A B_N)$ & $(0,0)$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Because $v>\bar c\ge C_{2:N}$ almost surely, $B_N>0$. Hence $U$ is always a strict best response to an opponent choosing $D$. The strategic issue is whether a government is willing to choose $D$ when the other region chooses $U$.

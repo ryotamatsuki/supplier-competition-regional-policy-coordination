@@ -1,0 +1,57 @@
+\section{Robustness and Scope}
+\label{sec:robustness}
+
+The main theorem uses a deliberately transparent incidence structure and guaranteed trade. This section records which parts can be relaxed without changing the central message and which cannot.
+
+\subsection{General regional incidence}
+
+The baseline assumes that the $D$ government internalizes a fraction $\rho$ of supplier rent but none of the buyer surplus. To allow broader incidence, suppose instead that it also internalizes fraction $\sigma\ge0$ of buyer surplus. Its local benefit from accepting $D$ becomes
+\begin{equation}
+L_N=\rho R_N+\sigma B_N.
+\label{eq:general-incidence}
+\end{equation}
+Under DRHR, define
+\begin{equation}
+d_m\equiv m_N-m_{N+1}>0,
+\qquad
+d_R\equiv R_N-R_{N+1}>0.
+\end{equation}
+Since $B_{N+1}-B_N=d_m+d_R$, local captured surplus falls when competition increases iff
+\begin{equation}
+\rho>\sigma\left(1+\frac{d_m}{d_R}\right).
+\label{eq:incidence-condition}
+\end{equation}
+Thus complete local ownership of suppliers is not required. What matters is whether supplier-rent exposure is sufficiently strong relative to the region's exposure to buyer-side gains from competition.
+
+For $F=U[0,1]$, $d_m=d_R$, so condition \eqref{eq:incidence-condition} simplifies to
+\begin{equation}
+\rho>2\sigma.
+\label{eq:uniform-incidence}
+\end{equation}
+The baseline $\sigma=0$, $\rho>0$ satisfies the condition automatically.
+
+\subsection{Trade failure and a reserve value}
+
+The guaranteed-trade assumption $v>\bar c$ is substantive for the strong one-step monotonicity result. If $v$ lies inside the support, procurement occurs only when the lowest cost is below $v$. Define
+\begin{align}
+G_N^R&\equiv \E[(v-C_{1:N})_+],\label{eq:reserve-G}\\
+R_N^R&\equiv \E\left[(\min\{C_{2:N},v\}-C_{1:N})\1\{C_{1:N}<v\}\right].\label{eq:reserve-R}
+\end{align}
+Adding suppliers raises the probability that trade occurs and can therefore increase expected supplier rent at low $N$, even though conditional competition compresses rents. Stepwise monotonicity of $R_N^R$ is not general. For example, with uniform costs on $[0,1]$ and $v=0.1$, expected supplier rent initially rises with $N$.
+
+The asymptotic reversal is more robust. Under the same compact-support assumptions and $v>c_0$, the first two order statistics both converge almost surely to $c_0$. The realized reserve-truncated rent is bounded above by their gap, so dominated convergence yields
+\begin{equation}
+G_N^R\to v-c_0,
+\qquad
+R_N^R\to0.
+\label{eq:reserve-limits}
+\end{equation}
+Appendix \ref{app:robustness} gives the complete argument. Hence if $A(v-c_0)>\Delta$, sufficiently large supplier markets again imply coordinated differentiation and unique decentralized duplication. We therefore interpret guaranteed trade as the condition supporting the strong monotone comparative static for every increment in $N$, not as a condition required for the long-run reversal itself.
+
+\subsection{First-price procurement}
+
+Second-price procurement is used in the baseline to make incidence transparent. Under standard symmetric independent-private-cost, risk-neutral, efficient-allocation conditions, revenue equivalence implies that first-price procurement generates the same expected payment and allocation objects relevant to the induced government game. In particular, expected buyer surplus and aggregate supplier rent are pinned down by the same order-statistic expectations. The upper-stage expected-payoff matrix is therefore unchanged under these standard conditions. This robustness does not extend automatically to risk aversion, asymmetric suppliers, common values, collusion, or endogenous participation.
+
+\subsection{Why entry remains exogenous}
+
+Endogenous supplier entry is intentionally outside the model. \citet{LiZheng2009} show that even in independent-private-value procurement, an increase in potential bidders can raise expected procurement cost because an entry effect may dominate the direct competition effect. Adding entry would require participation costs, an additional equilibrium, and a new welfare margin. The present theorem instead conditions on a supplier-market structure and asks how that market structure changes decentralized policy coordination. Endogenous entry is therefore a separate extension rather than a missing robustness check.
