@@ -14,8 +14,10 @@ jobs:
           python-version: '3.12'
       - name: Install Python verification dependencies
         run: pip install sympy numpy matplotlib
-      - name: Run proof-critical algebra regression
+      - name: Run Stage 8 proof-critical algebra regression
         run: python verification/stage8_verify.py
+      - name: Run Stage 9 independent final referee regression
+        run: python verification/stage9_verify.py
       - name: Regenerate regime figure
         run: python verification/make_uniform_regime_figure.py
       - name: Install LaTeX
