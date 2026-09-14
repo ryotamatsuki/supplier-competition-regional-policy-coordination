@@ -8,8 +8,8 @@ theorem planner_gain_iff
     {Delta A G : ℝ} :
     plannerValue Delta A G (U, D) > plannerValue Delta A G (U, U) ↔
       A * G > Delta := by
-  simp [plannerValue]
-  linarith
+  change Delta + A * G > 2 * Delta ↔ A * G > Delta
+  constructor <;> intro h <;> linarith
 
 theorem planner_condition_of_threshold
     {Delta A G : ℝ}
