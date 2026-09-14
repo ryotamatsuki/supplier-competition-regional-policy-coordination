@@ -1,0 +1,24 @@
+import SupplierCompetitionPolicy.Divergence
+import SupplierCompetitionPolicy.Nash
+import SupplierCompetitionPolicy.Planner
+import SupplierCompetitionPolicy.Reversal
+
+namespace SupplierCompetitionPolicy
+
+#print axioms planner_threshold_lt_decentralized
+#print axioms planner_threshold_falls
+#print axioms decentralized_threshold_rises
+#print axioms strict_wedge_expansion
+#print axioms pureNash_iff_UU_of_low
+#print axioms pureNash_UD_of_high
+#print axioms pureNash_DU_of_high
+#print axioms boundary_mixedNash_iff
+#print axioms mixed_probability_indifference
+#print axioms mixed_probability_in_unit
+#print axioms planner_gain_iff
+#print axioms planner_optimum_iff_differentiated
+#print axioms eventual_condition_bridge
+#print axioms eventual_reversal_exact
+#print axioms eventual_reversal_mixed
+
+end SupplierCompetitionPolicy
