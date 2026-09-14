@@ -111,6 +111,10 @@ jobs:
           set -euo pipefail
           cd formal
           lake env lean Main.lean 2>&1 | tee FORMAL_AXIOM_REPORT.txt
+          test -s FORMAL_AXIOM_REPORT.txt
+          grep -q 'planner_threshold_falls' FORMAL_AXIOM_REPORT.txt
+          grep -q 'boundary_mixedNash_iff' FORMAL_AXIOM_REPORT.txt
+          grep -q 'eventual_reversal_exact' FORMAL_AXIOM_REPORT.txt
           if grep -q 'error:' FORMAL_AXIOM_REPORT.txt; then
             echo 'Lean axiom audit emitted an error.'
             exit 1
