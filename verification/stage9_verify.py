@@ -21,10 +21,6 @@ assert sp.simplify(1-pstar-(A*rho*R-Delta)/(A*(B+rho*R))) == 0
 
 # Coordinated benchmark and threshold ordering.
 G = sp.symbols("G", positive=True)
-AP = Delta/G
-AN = Delta/(rho*R)
-# G = B + R and rho<=1 imply G>rho R whenever B>0.
-# Exact algebra of the payoff comparison:
 planner_gain = A*G-Delta
 local_gain = A*rho*R-Delta
 assert sp.diff(planner_gain,A) == G
@@ -64,21 +60,24 @@ for n in range(2,13):
     else:
         assert A_fixed < an
 
-# Reserve-limit sanity check for Uniform[0,1], where closed-form expected
-# reserve-truncated total surplus converges to v and supplier rent converges to 0.
+# Reserve-limit sanity check for Uniform[0,1]. Exact formulas avoid
+# high-degree floating-point polynomial integration.
 def reserve_total_surplus_uniform(n, reserve):
-    # E[(v-C_(1))_+] = integral_0^v P(C_(1)<t?) equivalently
-    # integral_0^v (1-t)^n dt? Direct integration gives v-(1-(1-v)**(n+1))/(n+1)
-    # corrected exact form below from integrating (v-c)n(1-c)^(n-1) on [0,v].
-    c = sp.symbols('c', real=True)
-    expr = sp.integrate((reserve-c)*n*(1-c)**(n-1),(c,0,reserve))
-    return float(expr)
+    return reserve - (1-(1-reserve)**(n+1))/(n+1)
+
+def reserve_supplier_rent_uniform(n, reserve):
+    # E[(min{C_(2),v}-C_(1)) 1{C_(1)<v}]
+    return (1-(1-reserve)**n*(1+n*reserve))/(n+1)
 
 for n in (2,5,20,100):
     g = reserve_total_surplus_uniform(n, 0.4)
+    r = reserve_supplier_rent_uniform(n, 0.4)
     assert 0 <= g <= 0.4
+    assert r >= 0
 assert reserve_total_surplus_uniform(100,0.4) > reserve_total_surplus_uniform(20,0.4)
 assert abs(reserve_total_surplus_uniform(100,0.4)-0.4) < 0.011
+assert reserve_supplier_rent_uniform(100,0.4) < reserve_supplier_rent_uniform(20,0.4)
+assert reserve_supplier_rent_uniform(100,0.4) < 0.011
 
 print("STAGE9 INDEPENDENT FINAL REFEREE REGRESSION PASS")
 print("boundary gap:", boundary_gap)
