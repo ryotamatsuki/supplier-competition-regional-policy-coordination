@@ -12,11 +12,13 @@ Official journal page:
 The official IJIO page points to:
 `https://www.editorialmanager.com/ijio/default.aspx`
 
-At the Stage 10 check, the public landing page displayed:
+The latest public Editorial Manager snapshot accessible to this Stage 10 audit displayed:
 
 `Site under development. Do not use for live manuscript submission.`
 
-This is a hard administrative blocker to final portal submission at this moment. It is not a scientific/manuscript defect.
+The web source available to this audit was crawled roughly two months earlier, so Stage 10 does **not** infer that the notice necessarily remains live on 2026-09-15. Instead, the live portal status is treated as unverified. The Stage 10 contract requires a live check immediately before submission, and that requirement cannot be satisfied from the available snapshot alone.
+
+This is an administrative verification blocker, not a scientific/manuscript defect.
 
 ## Guide for Authors
 The Editorial Manager page links to the ScienceDirect IJIO Guide for Authors. The guide endpoint returned an access/cache failure to the automated audit, so Stage 10 does not invent journal-specific peer-review or file-upload requirements that could not be confirmed live.
@@ -29,10 +31,10 @@ Accordingly, the package is conservatively prepared with:
 - editable LaTeX source;
 - reproducibility code and figure source.
 
-This structure is compatible with a double-anonymized workflow if IJIO requests it, while the separate title page can simply be ignored if the live workflow does not.
+This structure supports an anonymized-review workflow if IJIO requests it, while the separate title page can simply be ignored if the live workflow does not.
 
 ## Fees
-The live Editorial Manager payment/fee step is unavailable while the portal is marked under development, so Stage 10 cannot make a new live fee confirmation.
+The live Editorial Manager payment/fee step could not be checked in this audit, so Stage 10 cannot make a new live fee confirmation.
 
 The prior Stage 9 classification remains provisional:
 - standard Elsevier subscription publication route: no publication charge;
@@ -54,4 +56,4 @@ These fields are isolated in `submission/title_page.tex` and `submission/EDITORI
 
 ## Requirements verdict
 Scientific/manuscript package: PASS.
-Live portal/fee confirmation: BLOCKED BY CURRENT OFFICIAL PORTAL STATUS.
+Live portal / live fee confirmation: NOT VERIFIED; mandatory recheck immediately before submission.
