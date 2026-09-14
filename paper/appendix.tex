@@ -1,0 +1,161 @@
+\section{Proofs}
+\label{app:proofs}
+
+\subsection{Proof of Proposition \ref{prop:nash}}
+
+Fix $N$. If the other government chooses $D$, choosing $U$ yields $\Delta+A B_N>0$ whereas choosing $D$ yields zero, so $U$ is a strict best response to $D$.
+
+If the other government chooses $U$, choosing $U$ yields $\Delta$ and choosing $D$ yields $A\rho R_N$. Therefore the best response to $U$ is $U$ when $A\rho R_N<\Delta$, both actions when equality holds, and $D$ when $A\rho R_N>\Delta$.
+
+At the boundary $A\rho R_N=\Delta$, let $p$ be the probability that the opponent chooses $U$. Then
+\begin{align}
+\pi(U;p)-\pi(D;p)
+&=\Delta+(1-p)A B_N-pA\rho R_N\\
+&=(1-p)(\Delta+A B_N).
+\end{align}
+Hence $U$ is the unique best response for every $p<1$, whereas both $U$ and $D$ are best responses when $p=1$. Mutual best response therefore requires $p_1=1$ or $p_2=1$, which gives \eqref{eq:boundary-nash}. This also confirms that the three pure profiles listed in Proposition \ref{prop:nash} are the pure members of a larger boundary correspondence.
+
+For $A\rho R_N>\Delta$, let $p$ be the probability that the opponent chooses $U$. The expected payoff from $U$ is
+\begin{equation}
+\pi(U;p)=p\Delta+(1-p)(\Delta+A B_N)
+=\Delta+(1-p)A B_N,
+\end{equation}
+and the expected payoff from $D$ is
+\begin{equation}
+\pi(D;p)=pA\rho R_N.
+\end{equation}
+Indifference requires
+\begin{equation}
+\Delta+A B_N=pA(B_N+\rho R_N),
+\end{equation}
+which yields \eqref{eq:mixed}. Positivity is immediate, and $p_N^*<1$ iff $\Delta<A\rho R_N$. Hence this is the unique completely mixed equilibrium in the high-$A$ regime. Any semi-mixed equilibrium would require one player to use both actions while the other uses a pure action; but against $D$, $U$ is a strict best response, and against $U$, $D$ is a strict best response in this regime. Thus no such semi-mixed equilibrium exists. \qed
+
+\subsection{Proof of Proposition \ref{prop:planner}}
+
+The only positive candidate aggregate values are $2\Delta$ at $(U,U)$ and $\Delta+A G_N$ at either differentiated profile. Their difference is
+\begin{equation}
+V(U,D)-V(U,U)=A G_N-\Delta.
+\end{equation}
+The sign changes at $A=\Delta/G_N=A_N^P$. The profile $(D,D)$ yields zero and is never strictly optimal because $\Delta>0$. The result follows. \qed
+
+\subsection{Proof of Theorem \ref{thm:divergence}}
+
+Because $C_{1:N+1}\le C_{1:N}$ almost surely under the natural coupling, with strict inequality on an event of positive probability for a nondegenerate continuous distribution,
+\begin{equation}
+m_{N+1}<m_N.
+\end{equation}
+Hence $G_{N+1}=v-m_{N+1}>v-m_N=G_N$, and therefore
+\begin{equation}
+A_{N+1}^P=\frac{\Delta}{G_{N+1}}
+<\frac{\Delta}{G_N}=A_N^P.
+\end{equation}
+Under DRHR, the procurement result in \citet{Li2005} and \citet{XuLi2019} gives $R_{N+1}<R_N$. Since $\rho>0$,
+\begin{equation}
+A_{N+1}^N=\frac{\Delta}{\rho R_{N+1}}
+>\frac{\Delta}{\rho R_N}=A_N^N.
+\end{equation}
+\qed
+
+\subsection{Proof of Corollary \ref{cor:wedge-expansion}}
+
+First note that $G_N=B_N+R_N>\rho R_N$ because $B_N>0$ and $\rho\le1$. Hence $A_N^P<A_N^N$ and $\mathcal W_N$ is nonempty. Theorem \ref{thm:divergence} lowers its left endpoint and raises its right endpoint strictly when $N$ increases by one. Therefore $\mathcal W_N\subsetneq\mathcal W_{N+1}$. \qed
+
+\subsection{Proof of Theorem \ref{thm:reversal}}
+
+Under the compact support and positive density, $C_{1:N}\to c_0$ almost surely. Bounded convergence gives
+\begin{equation}
+m_N\to c_0,
+\end{equation}
+so $G_N\to v-c_0$. If $A(v-c_0)>\Delta$, there exists $N_P$ such that
+\begin{equation}
+A G_N>\Delta
+\end{equation}
+for all $N\ge N_P$. Proposition \ref{prop:planner} then implies that the coordinator strictly differentiates.
+
+Under DRHR, $R_N\to0$ \citep{XuLi2019}. Hence there exists $N_N$ such that
+\begin{equation}
+A\rho R_N<\Delta
+\end{equation}
+for all $N\ge N_N$. Proposition \ref{prop:nash} then implies that $(U,U)$ is the unique Nash equilibrium. Taking $\bar N=\max\{N_P,N_N\}$ proves the result. \qed
+
+\subsection{Proof of Corollary \ref{cor:destruction}}
+
+At $N_0$, $A\rho R_{N_0}>\Delta$ implies differentiated pure Nash equilibria by Proposition \ref{prop:nash}. Because $R_N\to0$, there exists a finite $N_1>N_0$ such that $A\rho R_N<\Delta$ for all sufficiently large $N\ge N_1$, so only $(U,U)$ remains. If the planner differentiates at $N_0$, then $A G_{N_0}>\Delta$. Since $G_N$ is strictly increasing in $N$, $A G_N>\Delta$ for all $N>N_0$, so planner differentiation persists. \qed
+
+\section{Additional Robustness Derivations}
+\label{app:robustness}
+
+\subsection{General incidence}
+
+Let the $D$ government's local benefit be $L_N=\rho R_N+\sigma B_N$. Define $d_m=m_N-m_{N+1}>0$ and $d_R=R_N-R_{N+1}>0$. Since $s_N=m_N+R_N$,
+\begin{equation}
+B_{N+1}-B_N=s_N-s_{N+1}=d_m+d_R.
+\end{equation}
+Therefore
+\begin{equation}
+L_{N+1}-L_N=-\rho d_R+\sigma(d_m+d_R).
+\end{equation}
+Thus $L_{N+1}<L_N$ iff
+\begin{equation}
+\rho>\sigma\left(1+\frac{d_m}{d_R}\right),
+\end{equation}
+which is \eqref{eq:incidence-condition}.
+
+\subsection{Uniform order statistics}
+
+If $C_k\sim U[0,1]$, standard order-statistic formulas give
+\begin{equation}
+\E[C_{1:N}]=\frac{1}{N+1},
+\qquad
+\E[C_{2:N}]=\frac{2}{N+1}.
+\end{equation}
+Hence $R_N=1/(N+1)$, $B_N=v-2/(N+1)$, and $G_N=v-1/(N+1)$, yielding \eqref{eq:uniform-thresholds}.
+
+\subsection{Reserve-value limits}
+
+When trade occurs only if $C_{1:N}<v$ with $v>c_0$, define $G_N^R$ and $R_N^R$ as in \eqref{eq:reserve-G}--\eqref{eq:reserve-R}. Under the baseline compact support, continuity, and strictly positive density, for each fixed $k$ the $k$th order statistic converges almost surely to the lower endpoint; in particular,
+\begin{equation}
+C_{1:N}\to c_0,
+\qquad
+C_{2:N}\to c_0
+\quad\text{a.s.}
+\end{equation}
+Therefore $(v-C_{1:N})_+\to v-c_0$ almost surely. This sequence is bounded on the compact support, so bounded convergence gives $G_N^R\to v-c_0$.
+
+For supplier rent, define the realized reserve-truncated rent
+\begin{equation}
+r_N^R\equiv
+(\min\{C_{2:N},v\}-C_{1:N})
+\1\{C_{1:N}<v\}.
+\end{equation}
+On the active event it is nonnegative, and for every realization
+\begin{equation}
+0\le r_N^R\le C_{2:N}-C_{1:N}\le \bar c-c_0.
+\end{equation}
+Because both order statistics converge almost surely to $c_0$, their gap converges almost surely to zero, and hence $r_N^R\to0$ almost surely. Dominated convergence then yields
+\begin{equation}
+R_N^R=\E[r_N^R]\to0.
+\end{equation}
+This proves \eqref{eq:reserve-limits} under the stated assumptions and yields the eventual reversal whenever $A(v-c_0)>\Delta$. We do not claim one-step monotonicity of $R_N^R$.
+
+\section{Computational Verification}
+\label{app:verification}
+
+The analytical proofs above are the basis for every theorem. For reproducibility, a Python/SymPy regression script independently checks the algebra of the mixed-equilibrium condition, the boundary best-response identity, the Uniform closed-form thresholds, and the general-incidence inequality. A separate Python script reproduces Figure \ref{fig:uniform-regimes}. These computations are verification aids and are not used as substitutes for the analytical proofs.
+
+\section{Connection to the Companion Portfolio Model}
+\label{app:companion}
+
+At a fixed $N$, compare $(U,U)$ with a unilateral switch to $(U,D)$. The coordinated gain is
+\begin{equation}
+A G_N-\Delta,
+\end{equation}
+and the $D$ government's gain is
+\begin{equation}
+A\rho R_N-\Delta.
+\end{equation}
+Thus a reduced-form binary switching model with total complementary value $G^{\mathrm{red}}=A G_N$ and local capture share
+\begin{equation}
+\lambda_N=\frac{\rho R_N}{G_N}
+\end{equation}
+reproduces the fixed-$N$ threshold comparison. This is why the fixed-$N$ wedge is not treated as a separate contribution. The present paper's new comparative static is that the procurement market endogenously makes $G_N$ rise and $\lambda_N$ fall with supplier competition and thereby changes the exact regional-policy equilibrium set.
