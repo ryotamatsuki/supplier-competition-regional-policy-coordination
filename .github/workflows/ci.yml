@@ -89,7 +89,7 @@ jobs:
             echo 'Formal source contains a forbidden proof placeholder.'
             exit 1
           fi
-          if grep -R -n -E '^[[:space:]]*axiom[[:space:]]' formal/SupplierCompetitionPolicy formal/SupplierCompetitionPolicy.lean --include='*.lean'; then
+          if grep -R -n -E '^[[:space:]]*axiom[[:space:]]' formal/SupplierCompetitionPolicy formal/SupplierCompetitionPolicy.lean formal/Main.lean --include='*.lean'; then
             echo 'Formal source contains a project-specific axiom declaration.'
             exit 1
           fi
@@ -104,11 +104,17 @@ jobs:
       - name: Build proof-critical Lean core
         run: |
           cd formal
-          lake build
+          lake build SupplierCompetitionPolicy
       - name: Record theorem/axiom report
+        shell: bash
         run: |
+          set -euo pipefail
           cd formal
-          lake env lean SupplierCompetitionPolicy/Audit.lean | tee FORMAL_AXIOM_REPORT.txt
+          lake env lean Main.lean 2>&1 | tee FORMAL_AXIOM_REPORT.txt
+          if grep -q 'error:' FORMAL_AXIOM_REPORT.txt; then
+            echo 'Lean axiom audit emitted an error.'
+            exit 1
+          fi
           if grep -q 'sorryAx' FORMAL_AXIOM_REPORT.txt; then
             echo 'Axiom audit detected sorryAx.'
             exit 1
