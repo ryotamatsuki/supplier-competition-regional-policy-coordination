@@ -44,13 +44,18 @@ jobs:
       - name: Build preflight source archive
         run: |
           mkdir -p dist
-          zip -r dist/IJIO-anonymous-source.zip paper figures verification submission -x '*.aux' '*.log' '*.out' '*.pdf' '*.png'
+          zip -r dist/IJIO-anonymous-source.zip paper figures verification \
+            -x '*.aux' '*.log' '*.out' 'paper/main.pdf'
           cp paper/main.pdf dist/anonymous-manuscript.pdf
           cp submission/title_page.pdf dist/title-page-TEMPLATE.pdf
           cp submission/cover_letter.pdf dist/cover-letter-TEMPLATE.pdf
+          cp submission/title_page.tex dist/title_page.tex
+          cp submission/cover_letter.tex dist/cover_letter.tex
+          cp submission/COVER_LETTER_IJIO.md dist/COVER_LETTER_IJIO.md
           cp submission/HIGHLIGHTS.txt dist/HIGHLIGHTS.txt
           cp submission/EDITORIAL_MANAGER_METADATA.md dist/EDITORIAL_MANAGER_METADATA.md
           cp submission/SUBMISSION_PACKET.md dist/SUBMISSION_PACKET.md
+          cp submission/AUTHOR_METADATA_CHECKLIST.md dist/AUTHOR_METADATA_CHECKLIST.md
       - name: Upload IJIO preflight packet
         uses: actions/upload-artifact@v4
         with:
